@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "fd8438ff-e05c-4b51-aa30-26acda9bf530",
+		"name": "User CRUD",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Rakib\",\n    \"last_name\": \"Hasan\",\n    \"age\": \"32\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Nawshad\",\n    \"last_name\": \"Amin\",\n    \"age\": \"34\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/api/v1/users",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"Nawshad Ibn\",\n    \"last_name\": \"Amin\",\n    \"age\": \"34\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8001/api/v1/users/45948fd9-297e-4fd6-9478-1ac5a99d84b7",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"45948fd9-297e-4fd6-9478-1ac5a99d84b7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8001/api/v1/users/45948fd9-297e-4fd6-9478-1ac5a99d84b7",
+					"host": [
+						"localhost"
+					],
+					"port": "8001",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"45948fd9-297e-4fd6-9478-1ac5a99d84b7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

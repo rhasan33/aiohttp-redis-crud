@@ -1,0 +1,22 @@
+version: "3"
+
+services: 
+  redis:
+    image: redis:alpine
+  
+  app:
+    build: .
+    links:
+      - redis:redis
+    depends_on: 
+      - redis
+    volumes: 
+      - ./src:/app/src
+    command: bash -c "./wait-for-it.sh redis:6379 -- gunicorn --chdir src main:app --bind 0.0.0.0:8000 --worker-class aiohttp.GunicornWebWorker --reload" 
+    ports:
+      - 8001:8000
+    environment:
+      - REDIS_HOST=redis
+
+volumes:
+  pgdata:
