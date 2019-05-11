@@ -67,3 +67,8 @@ async def delete_user(request):
         return web.json_response(status=204)
     else:
         return web.json_response(data=data, status=404)
+
+async def ping(request):
+    redis = request.app.get('redis')
+    redis.ping()
+    return web.json_response(data={"redis": "up"}, status=200)

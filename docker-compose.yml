@@ -17,6 +17,3 @@ services:
       - 8001:8000
     environment:
       - REDIS_HOST=redis
-
-volumes:
-  pgdata:

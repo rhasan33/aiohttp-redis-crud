@@ -1,6 +1,5 @@
 import logging
 import json
-from ast import literal_eval
 from aiohttp import web
 
 logger = logging.getLogger("search")
@@ -8,6 +7,10 @@ logger = logging.getLogger("search")
 SUCCESS_STATUS = [200, 201]
 DELETE_STATUS = 204
 ERROR_STATUS = [400, 404, 401]
+WHITE_LIST = [
+    '/',
+    '/api/ping'
+]
 
 def permissions():
     return {
@@ -23,7 +26,7 @@ def permissions():
 
 @web.middleware
 async def auth_middleware(request, handler):
-    if not request.path == '/':
+    if not request.path in WHITE_LIST:
         try:
             if request.headers['Authorization'] not in permissions().get(request.method.lower()):
                 raise web.HTTPUnauthorized()
