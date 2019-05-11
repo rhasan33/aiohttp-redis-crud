@@ -8,6 +8,16 @@
 
 Please import `User CRUD.postman_collection.json` as postman dump
 
+```
+'/api/v1/users/{user_id}'
+'/api/v1/users/{user_id}'
+'/api/v1/users/{user_id}'
+'/api/v1/users'
+'/api/v1/users'
+"/api/ping"
+"/"
+```
+
 ### Authorization Headers
 
 ```
