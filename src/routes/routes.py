@@ -1,4 +1,4 @@
-from src.views import user
+from views import user
 
 
 def setup_routes(app):

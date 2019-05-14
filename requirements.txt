@@ -1,3 +1,5 @@
 aiohttp==3.4.4
 gunicorn==19.9.0
 redis==3.2.1
+pytest-aiohttp==0.3.0
+pytest-cov==2.6.0

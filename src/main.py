@@ -2,9 +2,9 @@ import os
 from aiohttp import web
 import redis
 
-from src.logger import search_logger
-from src.routes.routes import setup_routes
-from src.middlewares.permissions import auth_middleware
+from logger import search_logger
+from routes.routes import setup_routes
+from middlewares.permissions import auth_middleware
 
 DEBUG = bool(os.environ.get("DEBUG", True))
 app = web.Application(debug=DEBUG, logger=search_logger("search"), middlewares=[auth_middleware])
